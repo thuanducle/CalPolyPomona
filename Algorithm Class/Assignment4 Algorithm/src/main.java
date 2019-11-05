@@ -13,7 +13,6 @@ class Node {
 }
 
 public class main {
-
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		String answer = "";
@@ -90,7 +89,6 @@ public class main {
 			node.CR = node.CC / node.CP;
 		}
 	}
-		
 while(true)
 {
 if(L1.isEmpty() && L2.isEmpty() && L3.isEmpty())
@@ -158,29 +156,35 @@ double listNumber = Double.MAX_VALUE;
 			L3.remove();
 		}
 	}
-	//If list is that of smallestNode, update actual index
+	//If list is that of smallestNode, update actual index, recompute the whole tree
 	if(listNumber == 1)
 	{
 	for(int i =0; i < L1.size();i++)
 	{
 		L1.get(i).actualIndex -= actualIndex;
+		L1.get(i).CC -= smallestNode.CC;
+		L1.get(i).CP -= smallestNode.CP;
+		L1.get(i).CR = (L1.get(i).CC)/(L1.get(i).CP);
 	}
 	}else if(listNumber == 2)
 	{
 		for(int i =0; i < L2.size();i++)
 		{
 			L2.get(i).actualIndex -= actualIndex;
+			L2.get(i).CC -= smallestNode.CC;
+			L2.get(i).CP -= smallestNode.CP;
+			L2.get(i).CR = (L2.get(i).CC)/(L2.get(i).CP);
 		}
 	}else {
 		for(int i =0; i < L3.size();i++)
 		{
 			L3.get(i).actualIndex -= actualIndex;
+			L3.get(i).CC -= smallestNode.CC;
+			L3.get(i).CP -= smallestNode.CP;
+			L3.get(i).CR = (L3.get(i).CC)/(L3.get(i).CP);
 		}
 	}
-	
 }
-		
 System.out.println(answer);		
-		
 	}
 }
